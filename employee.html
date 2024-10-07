@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <img src="img.jpeg" alt="Employee" class="rounded-circle border border-primary" style="width: 80px; height: 80px; object-fit: cover;">
+                <div class="ml-3">
+                    <h1 class="text-primary" id="employeeName">John Doe</h1>
+                    <p class="text-muted">Employee Dashboard</p>
+                </div>
+            </div>
+            <button id="logoutBtn" class="btn btn-danger">Logout</button>
+        </header>
+
+        <!-- Task Section -->
+        <section class="mb-5">
+            <h2 class="mb-4">My Tasks</h2>
+            <ul id="taskList" class="list-group">
+                <!-- Dynamically populated tasks -->
+                <li class="list-group-item">
+                    <span><strong>Task 1:</strong> Complete the website update </span>
+                    <button class="btn btn-success btn-sm float-right">Mark as Completed</button>
+                </li>
+            </ul>
+            <!-- Add this section inside the Task Section -->
+<div class="input-group mb-3">
+    <input type="text" id="newTaskInput" class="form-control" placeholder="New Task">
+    <div class="input-group-append">
+        <button id="addTaskBtn" class="btn btn-primary">Add Task</button>
+    </div>
+</div>
+
+        </section>
+
+        <!-- Performance Section -->
+        <section class="mb-5">
+            <h2 class="mb-4">My Performance</h2>
+            <canvas id="employeePerformanceChart" width="400" height="200"></canvas>
+        </section>
+
+      
+        
+    </div>
+    <div class="apointment">
+        <h2>Fix Appointment</h2>
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&bgcolor=%23ffffff&showTitle=0&mode=WEEK&src=dGFudWp0aG91ckBnbWFpbC5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=Y2xhc3Nyb29tMTEzODc4Njg5MTI4MTIyNDAyMTQyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTExOTQ2ODU5MTQzODUzNDE4Mzg0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTExMTI5OTc3NzQyMjY2MTYwNDI5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA5NzI2MzA3NDE0NTU2NTYwNjEwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAxMzAwMDE3MjkxMjU5OTU5OTM5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA0MTM0Njc5Mzk4NTk1NjMwOTU4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA2OTg4NDM0MDg5OTg1NTc1MjgyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAzMjM0NzA2MTMwNDI4MzE4NTA1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA3NjU3MTIzMzI3NDQ5MzY5OTAxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA1NDUxMjY0NTEzMTEzNzA2MjExQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA4MTE3MjQzNzE3MjUyMjc5MzI4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTEzMjMxNTk4NDE1MTA2OTMxNzg2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTEwNTY5MjI5MTQxMzc5NjE0MDQxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTEzMzU4OTc1MjkyNjQwMTU4NzE0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%2333B679&color=%23b80672&color=%23007b83&color=%23202124&color=%23202124&color=%23174ea6&color=%23c26401&color=%230047a8&color=%23137333&color=%23007b83&color=%230047a8&color=%23c26401&color=%230047a8&color=%230047a8&color=%230047a8&color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="employee.js" defer></script>
+</body>
+</html>

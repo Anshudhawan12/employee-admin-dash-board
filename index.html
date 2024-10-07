@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4e4c1; /* Light cream background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #ffffff; /* White background for the container */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #5d4037; /* Dark brown for the heading */
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #6d4c41; /* Medium brown for labels */
+        }
+        .input-group input {
+            width: 100%; /* Changed from 275px */
+            padding: 10px;
+            border: 1px solid #d7ccc8; /* Soft brown border */
+            border-radius: 6px;
+            background-color: #f9f2ec; /* Light cream background for inputs */
+            color: #4e342e; /* Dark brown text */
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #795548; /* Darker brown on focus */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #795548; /* Rich brown for the button */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            /* Adding a type attribute to ensure button behavior */
+            type: button;
+        }
+        button:hover {
+            background-color: #6d4c41; /* Slightly darker brown on hover */
+        }
+        .error {
+            color: #d32f2f; /* Red for error messages */
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <button onclick="login()">Login</button>
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var errorMessage = document.getElementById("error-message");
+
+            if (username === "employee" && password === "employee123") {
+                window.location.href = "employee.html";
+            } else if (username === "manager" && password === "manager123") {
+                window.location.href = "manager.html";
+            } else {
+                errorMessage.textContent = "Invalid username or password";
+            }
+        }
+    </script>
+</body>
+</html>

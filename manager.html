@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <img src="mang.jpg" alt="Manager" class="rounded-circle border border-primary" style="width: 80px; height: 80px; object-fit: cover;">
+                <div class="ml-3">
+                    <h1 class="text-primary" id="managerName">John Davidson</h1>
+                    <p class="text-muted">Manager id : #12455815</p>
+                </div>
+            </div>
+            <button id="logoutBtn" class="btn btn-danger">Logout</button>
+        </header>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Overview</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Leaves</h5>
+                            <p id="managerLeaves" class="card-text text-primary font-weight-bold">10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Days Attended</h5>
+                            <p id="managerDaysAttended" class="card-text text-success font-weight-bold">20</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Messages</h5>
+                            <p id="managerMessages" class="card-text text-info font-weight-bold">No new messages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task Assignment Section -->
+        <section class="mb-5">
+            <h2 class="mb-4">Task Assignment</h2>
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Assign Tasks</h5>
+                    <form id="taskForm">
+                        <div class="form-group">
+                            <label for="taskEmployee">Assign to Employee:</label>
+                            <select id="taskEmployee" class="form-control">
+                                <option>Employee 1</option>
+                                <option>Employee 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription">Task Description:</label>
+                            <input type="text" id="taskDescription" class="form-control" placeholder="Enter task details">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Assign Task</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Section -->
+        <section class="mb-5">
+            <h2 class="mb-4">Department Performance</h2>
+            <canvas id="performanceChart" width="400" height="200"></canvas>
+        </section>
+
+        <!-- Employee Details Section -->
+        <section class="mb-5">
+            <h2 class="mb-4">Employee Overview</h2>
+            <ul id="employeeList" class="list-group">
+                <li class="list-group-item d-flex align-items-center">
+                    <img src="../dummy-person.jpg" alt="Employee 1" class="rounded-circle" style="width: 60px; height: 60px;">
+                    <div class="ml-3">
+                        <h5>Group1 Leader</h5>
+                        <p>Age: 30 | Department: Development</p>
+                    </div>
+                    <button class="btn btn-info ml-auto">View Profile</button>
+                </li>
+                <!-- More employee details dynamically populated -->
+            </ul>
+        </section>
+
+     
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="manager.js" defer></script>
+</body>
+</html>
